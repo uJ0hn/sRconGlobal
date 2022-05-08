@@ -1,5 +1,7 @@
 package dev.j0hny.rconglobal;
 
+import dev.j0hny.rconglobal.exception.AuthenticationException;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.Charset;
@@ -119,13 +121,6 @@ public class Rcon {
 
     public void setCharset(Charset charset) {
         this.charset = charset;
-    }
-
-}
- class AuthenticationException extends Exception{
-
-    public AuthenticationException(String message) {
-        super(message);
     }
 
 }
