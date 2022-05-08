@@ -20,7 +20,7 @@ Ao se conectar ao servidor rcon, um `AuthenticationException` será lançado se 
 ## Download
 O mais recente .jar estará dentro do  [Projeto/releases](https://github.com/uJ0hn/sRconGlobal/releases) pronto para ser utilizado
 ## Maven
-```java
+```xml
 //pom.xml
 <dependency>  
     <groupId>com.github.uJ0hn</groupId>  
