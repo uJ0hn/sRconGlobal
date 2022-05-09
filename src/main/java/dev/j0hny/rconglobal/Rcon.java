@@ -1,12 +1,14 @@
 package dev.j0hny.rconglobal;
 
 import dev.j0hny.rconglobal.exception.AuthenticationException;
+import dev.j0hny.rconglobal.logger.LoggerModule;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
+
 /**
 * @author uJ0hny_
  * Api para conexão com o RCon
@@ -15,6 +17,7 @@ public class Rcon {
 
     private final Object sync = new Object();
     private final Random rand = new Random();
+    private LoggerModule logger=new LoggerModule();
 
     private int requestId;
     private Socket socket;
@@ -81,6 +84,9 @@ public class Rcon {
         synchronized(sync) {
             this.socket.close();
         }
+        if (getSocket().isConnected()) {
+            logger.sendMessage("A conexão com o rcon foi encerrada com sucesso!");
+        }
     }
 
     /**
@@ -98,7 +104,12 @@ public class Rcon {
 
         RconPacket response = this.send(RconPacket.SERVERDATA_EXECCOMMAND, comando.getBytes());
 
+        if (getSocket().isConnected()) {
+            logger.sendMessageModule("COMANDO", "O comando " + comando + " foi executado no Rcon.");
+        }
+
         return new String(response.getPayload(), this.getCharset());
+
     }
 
     private RconPacket send(int type, byte[] payload) throws IOException {

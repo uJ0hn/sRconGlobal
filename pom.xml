@@ -8,6 +8,22 @@
     <artifactId>sRConGlobal</artifactId>
     <version>1.1</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Users/terci/Downloads/paperspigot-1.8.8-exploit-patched-b1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>bungee</groupId>
+            <artifactId>bungee</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Users/terci/Downloads/waterfall-1.18-475.jar</systemPath>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
