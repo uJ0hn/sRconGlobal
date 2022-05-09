@@ -6,22 +6,39 @@
 
     <groupId>dev.j0hny.rconglobal</groupId>
     <artifactId>sRConGlobal</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
+
+    <repositories>
+        <repository>
+            <id>bungeecord-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/terci/Downloads/paperspigot-1.8.8-exploit-patched-b1.jar</systemPath>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.4</version>
+            <type>jar</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>bungee</groupId>
-            <artifactId>bungee</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/terci/Downloads/waterfall-1.18-475.jar</systemPath>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.15-SNAPSHOT</version>
+            <type>javadoc</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <properties>
